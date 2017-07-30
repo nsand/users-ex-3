@@ -1,5 +1,18 @@
 const path = require('path');
 
+const plugins = [];
+
+const isProd = process.env.NODE_ENV === 'production';
+
+if (isProd) {
+	plugins.push(new webpack.optimize.UglifyJsPlugin({
+		mangle: true,
+		compress: {
+			warnings: false,
+		},
+	}));
+}
+
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'app', 'app.js'),
@@ -32,5 +45,6 @@ module.exports = {
 			},
 		],
 	},
+	plugins,
 	devtool: 'cheap-module-source-map',
 };

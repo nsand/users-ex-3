@@ -4,8 +4,7 @@ import '@uirouter/angularjs';
 
 import name from './app.module';
 
-import root from './routes/root.route';
-import user from './routes/user.route';
+import { root, user } from './routes';
 
 angular.module(name).config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 	$locationProvider.html5Mode(true);

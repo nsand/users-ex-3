@@ -1,6 +1,12 @@
 import template from './user.template.html';
 import '../../models/users.factory';
 
+/**
+ * The component controller for rh-user.
+ * If a user is received by state parameters, that one will be
+ * rendered; otherwise, the user for the specified id from the url parameter
+ * will be fetched
+ */
 class Controller {
 	constructor($state, Users) {
 		this.$state = $state;
@@ -8,6 +14,7 @@ class Controller {
 	}
 	$onInit() {
 		if (!this.$state.params.user && !this.$state.params.id) {
+			// No information about a user, go back to the list
 			this.$state.go('users');
 		}
 		else {

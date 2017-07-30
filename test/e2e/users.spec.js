@@ -31,4 +31,9 @@ describe('Get a list of all of the users', function () {
 		usernames.get(i).element(by.xpath('..')).click();
 		expect(browser.getCurrentUrl()).toEqual('http://localhost:3096/users/5');
 	});
+
+	it('should go to /users for any bad path', function () {
+		browser.get('http://localhost:3096/usersisnotareallink');
+		expect(browser.getCurrentUrl()).toEqual('http://localhost:3096/users');
+	});
 });

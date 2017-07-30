@@ -1,6 +1,11 @@
 import template from './users.template.html';
 import '../../models/users.factory';
 
+/**
+ * The component controller for rh-users.
+ * Fetches all of the users and then renders it as a list.
+ * If a specific user row is selected, the details for that user will be shown
+ */
 class Controller {
 	constructor($state, Users) {
 		this.$state = $state;
