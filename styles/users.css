@@ -14,3 +14,7 @@
 .table > tbody > tr {
 	cursor: pointer;
 }
+
+a {
+	cursor: pointer;
+}

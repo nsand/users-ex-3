@@ -9,7 +9,7 @@ const user = {
 	params: {
 		user: null,
 	},
-	template: '<user></user>'
+	template: '<rh-user></rh-user>'
 };
 
 export default user;

@@ -8,6 +8,7 @@ class Controller {
 	}
 	$onInit() {
 		this.isLoading = true;
+		// Whenever the component loads, we have to fetch all of the users
 		this.users = this.Users.getAll();
 		this.users.$promise.catch((err) => {
 			this.error = `There was a problem fetching all of the users (${error.status}).`;
@@ -15,11 +16,19 @@ class Controller {
 			this.isLoading = false;
 		});
 	}
+
+	/**
+	 * Update the state with the selected user
+	 * @param {User} user the user to get the details of
+	 */
 	goToUser(user) {
 		this.$state.go('user', { id: user.id, user });
 	}
 }
-angular.module('users').component('users', {
+
+Controller.$inject = ['$state', 'Users'];
+
+angular.module('users').component('rhUsers', {
 	template,
-	controller: ['$state', 'Users', Controller],
+	controller: Controller,
 });

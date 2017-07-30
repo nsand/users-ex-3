@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "selenium-update": "webdriver-manager update",
+    "test": "protractor protractor.conf.js",
     "dev": "concurrently 'webpack --progress --colors --watch' 'npm start'",
-    "start": "node app"
+    "start": "node app",
+    "postinstall": "npm run selenium-update"
   },
   "author": "Nick Sandonato",
   "license": "MIT",
@@ -25,6 +27,7 @@
     "concurrently": "^3.5.0",
     "html-loader": "^0.5.0",
     "less": "^2.7.2",
+    "protractor": "^5.1.2",
     "webpack": "^3.4.1"
   }
 }

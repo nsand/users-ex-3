@@ -6,7 +6,7 @@ import '../components/users/users.component';
 const root = {
 	name: 'users',
 	url: '/users',
-	template: '<users></users>'
+	template: '<rh-users></rh-users>'
 };
 
 export default root;
