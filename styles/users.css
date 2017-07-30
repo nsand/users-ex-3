@@ -1,0 +1,16 @@
+.user__property {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.property-name {
+	min-width: 150px;
+}
+
+.property-name:after {
+	content: ': ';
+}
+
+.table > tbody > tr {
+	cursor: pointer;
+}

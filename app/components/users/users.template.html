@@ -1,0 +1,30 @@
+<div ng-if="$ctrl.error">
+	<h1>Could not load the list of users</h1>
+	<p ng-bind="$ctrl.error"></p>
+</div>
+
+<div ng-if="$ctrl.isLoading">
+	Loading...
+</div>
+
+<table class="table table-striped" ng-if="!$ctrl.error && !$ctrl.isLoading">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Username</th>
+			<th>E-mail</th>
+			<th>Address</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in $ctrl.users | orderBy: 'name'" ng-click="$ctrl.goToUser(user)">
+			<td ng-bind="user.name"></td>
+			<td ng-bind="user.username"></td>
+			<td><a ng-attr-href="{{'mailto:' + user.email}}" ng-bind="user.email"></a></td>
+			<td>
+				<div ng-bind="user.address.street"></div>
+				<div><span ng-bind="user.address.city"></span> <span ng-bind="user.address.zipcode"></span></div>
+			</td>
+		</tr>
+	</tbody>
+</table>

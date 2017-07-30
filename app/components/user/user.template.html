@@ -1,0 +1,48 @@
+<div ng-if="$ctrl.error">
+	<h1>Could not load the user</h1>
+	<p ng-bind="$ctrl.error"></p>
+</div>
+
+<div ng-if="$ctrl.isLoading">
+	Loading...
+</div>
+
+<div ng-if="!$ctrl.error && !$ctrl.isLoading" class="container">
+	<h1>User Details</h1>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="panel-title" ng-bind="$ctrl.user.name"></h2>
+				</div>
+				<div class="panel-body">
+					<dl>
+						<div class="user__property">
+							<dt class="property-name">Username</dt>
+							<dd ng-bind="$ctrl.user.username"></dd>
+						</div>
+						<div class="user__property">
+							<dt class="property-name">Email</dt>
+							<dd><a ng-attr-href="{{'mailto:' + $ctrl.user.email}}" ng-bind="$ctrl.user.email"></a></dd>
+						</div>
+						<div class="user__property">
+							<dt class="property-name">Phone Number</dt>
+							<dd ng-bind="$ctrl.user.phone"></dd>
+						</div>
+						<div class="user__property">
+							<dt class="property-name">Website</dt>
+							<dd><a ng-attr-href="{{$ctrl.user.website}}" ng-bind="$ctrl.user.website"></a></dd>
+						</div>
+						<div class="user__property">
+							<dt class="property-name">Address</dt>
+							<dd>
+								<div ng-bind="$ctrl.user.address.street"></div>
+								<div><span ng-bind="$ctrl.user.address.city"></span> <span ng-bind="$ctrl.user.address.zipcode"></span></div>
+							</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
