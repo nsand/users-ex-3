@@ -21,24 +21,24 @@
 				</div>
 				<div class="panel-body">
 					<dl>
-						<div class="user__property">
-							<dt class="property-name">Username</dt>
+						<div class="user-property">
+							<dt class="user-property__name">Username</dt>
 							<dd ng-bind="$ctrl.user.username"></dd>
 						</div>
-						<div class="user__property">
-							<dt class="property-name">Email</dt>
+						<div class="user-property">
+							<dt class="user-property__name">Email</dt>
 							<dd><a ng-attr-href="{{'mailto:' + $ctrl.user.email}}" ng-bind="$ctrl.user.email"></a></dd>
 						</div>
-						<div class="user__property">
-							<dt class="property-name">Phone Number</dt>
+						<div class="user-property">
+							<dt class="user-property__name">Phone Number</dt>
 							<dd ng-bind="$ctrl.user.phone"></dd>
 						</div>
-						<div class="user__property">
-							<dt class="property-name">Website</dt>
+						<div class="user-property">
+							<dt class="user-property__name">Website</dt>
 							<dd><a ng-attr-href="{{$ctrl.user.website}}" ng-bind="$ctrl.user.website"></a></dd>
 						</div>
-						<div class="user__property">
-							<dt class="property-name">Address</dt>
+						<div class="user-property">
+							<dt class="user-property__name">Address</dt>
 							<dd>
 								<div ng-bind="$ctrl.user.address.street"></div>
 								<div><span ng-bind="$ctrl.user.address.city"></span> <span ng-bind="$ctrl.user.address.zipcode"></span></div>

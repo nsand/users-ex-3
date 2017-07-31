@@ -1,12 +1,12 @@
-.user__property {
+.user-property {
 	display: flex;
 	margin-bottom: 16px;
 }
 
-.property-name {
+.user-property__name {
 	min-width: 150px;
 }
 
-.property-name:after {
+.user-property__name:after {
 	content: ': ';
 }
