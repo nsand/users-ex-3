@@ -24,7 +24,7 @@ describe('Get a list of all of the users', function () {
 
 		expect(usernames.get(0).element(by.xpath('..')).isPresent()).toEqual(true);
 
-		usernames.get(0).element(by.xpath('..')).click();
+		usernames.get(0).element(by.xpath('..')).element(by.binding('user.name')).click();
 
 		expect(browser.getCurrentUrl()).toMatch(/\/users\/\d+/);
 		expect(element(by.binding('$ctrl.user.username')).getText()).toEqual(username);

@@ -10,11 +10,3 @@
 .property-name:after {
 	content: ': ';
 }
-
-.table > tbody > tr {
-	cursor: pointer;
-}
-
-a {
-	cursor: pointer;
-}
