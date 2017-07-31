@@ -19,17 +19,15 @@ describe('Get a list of all of the users', function () {
 		const usernames = element.all(by.binding('user.username'));
 		const count = usernames.count();
 
-		// Find a specific user with a known ID
-		let i = 0;
-		for (; i < count; i++) {
-			if (usernames.get(i).getText() === 'Kamren') {
-				break;
-			}
-		}
+		// For comparing username after transition
+		const username = usernames.get(0).getText();
 
-		expect(usernames.get(i).element(by.xpath('..')).isPresent()).toEqual(true);
-		usernames.get(i).element(by.xpath('..')).click();
-		expect(browser.getCurrentUrl()).toEqual('http://localhost:3096/users/5');
+		expect(usernames.get(0).element(by.xpath('..')).isPresent()).toEqual(true);
+
+		usernames.get(0).element(by.xpath('..')).click();
+
+		expect(browser.getCurrentUrl()).toMatch(/\/users\/\d+/);
+		expect(element(by.binding('$ctrl.user.username')).getText()).toEqual(username);
 	});
 
 	it('should go to /users for any bad path', function () {

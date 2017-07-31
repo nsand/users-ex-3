@@ -19,7 +19,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="user in $ctrl.users | orderBy: 'name'" ng-click="$ctrl.goToUser(user)">
+			<tr ng-repeat="user in $ctrl.users | orderBy: '-name'" ng-click="$ctrl.goToUser(user)">
 				<td ng-bind="user.name"></td>
 				<td ng-bind="user.username"></td>
 				<td><a ng-attr-href="{{'mailto:' + user.email}}" ng-bind="user.email"></a></td>
